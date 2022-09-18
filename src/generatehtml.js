@@ -3,26 +3,41 @@ function buildmanagercard (manager) {
     <div class = "card" style="width: 18rem;">
     <div class = "card-header" style = "color: green">
     <h2 class = "card-title">${manager.getname()}</h2>
-    <p> id: ${manager.getid()}</p>
+    <p> ID: ${manager.getid()}</p>
+    <p> Email: ${manager.getemail()}</p>
+    <p> Office Number: ${manager.getofficenumber()}</p>
     </div>
     </div>
     `
-
 }
 
 function buildengineercard (engineer) {
     return `
-    ${
-        engineer.getname ()
-    }`
+    <div class = "card" style="width: 18rem;">
+    <div class = "card-header" style = "color: blue">
+    <h2 class = "card-title">${engineer.getname()}</h2>
+    <p> ID: ${engineer.getid()}</p>
+    <p> Email: ${engineer.getemail()}</p>
+    <p> GitHub: ${engineer.getgithub()}</p>
+    </div>
+    </div>
+    `
 }
 
 function buildinterncard (intern) {
     return `
-    ${
-        intern.getname ()
-    }`
+    <div class = "card" style="width: 18rem;">
+    <div class = "card-header" style = "color: red">
+    <h2 class = "card-title">${intern.getname()}</h2>
+    <p> ID: ${intern.getid()}</p>
+    <p> Email: ${intern.getemail()}</p>
+    <p> School: ${intern.getschool()}</p>
+    </div>
+    </div>
+    `
 }
+
+
 function insertCards (team) {
     const html = []
     html.push (team.filter (employee => employee.getrole () === "manager").map (manager => buildmanagercard(manager)))
